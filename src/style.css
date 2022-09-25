@@ -1,29 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 * {
-  box-sizing: border-box;
-}
-
-html {
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
+html,
+body {
+  min-height: 100%;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
+body {
+  width: 100%;
+  background-color: aliceblue;
 }
