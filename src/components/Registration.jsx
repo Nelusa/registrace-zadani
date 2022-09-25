@@ -19,7 +19,6 @@ const Registration = () => {
       });
       console.log(user);
     } else {
-      //const userNameInput = event.target.value;
       setUser({
         ...user,
         username: '',
@@ -35,9 +34,7 @@ const Registration = () => {
       setUser({
         ...user,
         email: userEmailInput,
-        //username: handleNameFromEmail(userEmailInput),
       });
-      //handleNameFromEmail;
       console.log(user);
     } else {
       console.log('Invalid email!');
@@ -60,8 +57,6 @@ const Registration = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (user.password === user.passwordConfirm) {
-      //handleNameFromEmail;
-      //console.log(handleNameFromEmail(event));
       console.log(`Registration of the user ${user.username} was successful.`);
       alert(`Your registration was successful! Welcome ${user.username}! 🎉`);
     } else {
@@ -88,7 +83,6 @@ const Registration = () => {
             id="email_address"
             placeholder="Email Address"
             type="email"
-            //value={user.email}
             onSubmit={handleEmailControl}
             onChange={handleNameFromEmail}
           />
