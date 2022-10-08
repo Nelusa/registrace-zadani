@@ -9,36 +9,21 @@ const Registration = () => {
     passwordConfirm: '',
   });
 
-  const handleNameFromEmail = (event) => {
+  const handleEmailChange = (event) => {
     const userEmailInput = event.target.value;
     console.log(event.target.value);
-    if (user.username === '') {
+    if (
+      user.username === '' &&
+      userEmailInput.includes('@') &&
+      userEmailInput.includes('.')
+    ) {
       setUser({
         ...user,
         username: userEmailInput.slice(0, userEmailInput.indexOf('@')),
       });
       console.log(user);
-    } else {
-      setUser({
-        ...user,
-        username: '',
-      });
-      console.log(user);
-    }
-  };
-
-  const handleEmailControl = (event) => {
-    const userEmailInput = event.target.value;
-    console.log(userEmailInput);
-    if (userEmailInput.includes('@') && userEmailInput.includes('.')) {
-      setUser({
-        ...user,
-        email: userEmailInput,
-      });
-      console.log(user);
-    } else {
+    } else if (!userEmailInput.includes('@') && !userEmailInput.includes('.')) {
       console.log('Invalid email!');
-      alert(`Please ${user.username}, enter valid email with @ and dot 🙏🏼`);
     }
   };
 
@@ -83,8 +68,7 @@ const Registration = () => {
             id="email_address"
             placeholder="Email Address"
             type="email"
-            onSubmit={handleEmailControl}
-            onChange={handleNameFromEmail}
+            onChange={handleEmailChange}
           />
           <input
             id="username"
